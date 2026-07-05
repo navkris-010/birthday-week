@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unlock</title>
+<style>
+body{font-family:Arial;background:#111;color:#fff;display:flex;justify-content:center;align-items:center;height:100vh;margin:0}
+.box{text-align:center;background:#222;padding:35px;border-radius:20px;width:340px}
+input{padding:12px;width:90%;border-radius:8px;border:none;margin:10px 0}
+button{padding:12px 24px;background:#ff4f8b;color:#fff;border:none;border-radius:25px;cursor:pointer}
+#msg{margin-top:12px;color:#ffd166}
+</style></head>
+<body><div class="box">
+<h2>🔒 One tiny challenge...</h2>
+<p>What's today's password?</p>
+<input id="pw" placeholder="Enter password">
+<p><small>Hint: The place where we first met.</small></p>
+<button onclick="go()">Unlock ❤️</button>
+<div id="msg"></div>
+</div>
+<script>
+const PASSWORD="tiramisu";
+function go(){
+ if(document.getElementById('pw').value===PASSWORD){
+   document.getElementById('msg').innerHTML="Verified ❤️<br>Preparing today's surprise...";
+   setTimeout(()=>location.href='day1.html',2200);
+ }else{
+   document.getElementById('msg').innerText="Nope 😜 Try again.";
+ }
+}
+</script>
+</body></html>
